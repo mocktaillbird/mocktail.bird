@@ -9,7 +9,7 @@
   <description>Parent mocktail.bird project for mocking all API and json management</description>
   
   <properties>
-  		<spring.boot.starter.version>1.5.6.RELEASE</spring.boot.starter.version>
+  		<springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
   </properties>
   
 	<!-- Add typical dependencies for a web application -->
@@ -48,15 +48,6 @@
 	        </dependency>
 	    </dependencies>
 	</dependencyManagement>
-	
-	<build>
-	    <plugins>
-	        <plugin>
-	            <groupId>org.springframework.boot</groupId>
-	            <artifactId>spring-boot-maven-plugin</artifactId>
-	        </plugin>
-	    </plugins>
-	</build>
 	 
 	 <modules>
 	   <module>service</module>

@@ -5,10 +5,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+//import org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory;
+
+import io.undertow.UndertowOptions;
 
 @SpringBootApplication
 public class Application {
-	
 
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
@@ -16,5 +19,13 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 		logger.info("Starting the MockTile Bird.....");
 	}
-
+	
+//	@Bean
+//	UndertowEmbeddedServletContainerFactory embeddedServletContainerFactory() {
+//		UndertowEmbeddedServletContainerFactory factory = new UndertowEmbeddedServletContainerFactory();
+//		factory.addBuilderCustomizers(
+//				builder -> builder.setServerOption(UndertowOptions.ENABLE_HTTP2, true));
+//		return factory;
+//	}
+	
 }
