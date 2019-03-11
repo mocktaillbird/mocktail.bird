@@ -1,9 +1,11 @@
 # mocktail.bird
 An Open source Mock application for http REST services and JSON stuff
 
+#####Storie's Board
 
+___
 
-
+[Agile](https://trello.com/b/SYCJdKCZ/mocktailbird)
 
 ####  #Features:
 
@@ -25,6 +27,8 @@ An Open source Mock application for http REST services and JSON stuff
 
 * swagger UI for API management (http://localhost:9080/swagger-ui.html#/)
 
+* HTTP/2 Support
+
   
 
 #### #Good to Have:
@@ -33,7 +37,7 @@ _______
 
 * Staring/stopping services
 
-#### Design:
+#### [Stories](https://trello.com/b/SYCJdKCZ/mocktailbird)
 
 ________
 
