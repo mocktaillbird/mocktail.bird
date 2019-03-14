@@ -37,12 +37,12 @@
 		 <artifactId>spring-boot-starter-data-mongodb</artifactId>
 	 </dependency>
 	 
-	 <dependency>
-	    <groupId>org.projectlombok</groupId>
-	    <artifactId>lombok</artifactId>
-	    <version>${projectlombok.version}</version>
-	    <scope>provided</scope>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${jackson-databind.version}</version>
 	</dependency>
+	
 	
 	<dependency>
 	    <groupId>org.json</groupId>

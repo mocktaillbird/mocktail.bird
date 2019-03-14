@@ -1,6 +1,6 @@
-# 			mocktail.bird
+# 							mocktail.bird
 
-**SetUp** 		**Storie Board** 		**Features** 		**Good to have**
+**SetUp** 				**Storie Board** 				**Features** 				**Good to have**
 
 ______
 
@@ -26,7 +26,7 @@ mongodb setup
 
 1. java 8 installation, Check using ``` java -version```
 2. mvn installation, Check using ``` mvn -version```
-3. [mongoDB setup]( )
+3. [mongoDB setup]( https://github.com/mocktaillbird/docs.mocktail.bird )
 4. git clone 
 5. Update application.properties file with you db configurations.
 6. Run ``` mvn clean install``` in root

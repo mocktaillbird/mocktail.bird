@@ -12,6 +12,7 @@
   		<springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
   		<projectlombok.version>1.18.0</projectlombok.version>
   		<org.json.version>20180813</org.json.version>
+  		<jackson-databind.version>2.9.8</jackson-databind.version>
   </properties>
   
 	<!-- Add typical dependencies for a web application -->
