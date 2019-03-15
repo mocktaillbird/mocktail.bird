@@ -3,7 +3,8 @@ package bird.mocktail.me.constants;
 public enum ErrorCodes {
 	
 	 
-	IN_VALID_ID(4000, "Not a proper Request Id, Try the correct ");
+	INVALID_ID(4000, "Not a proper Request Id, Try the correct one."),
+	INVALID_REQUEST(4001, "No data found for this request.");
 
     private final Integer key;
     private final String value;

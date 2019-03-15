@@ -1,8 +1,9 @@
 package bird.mocktail.me.mapper;
 
+import bird.mocktail.me.pojos.UserMockResponse;
 
 public interface MockOrchestration {
 	
-	public void fetchForGivenId(String id);
+	public UserMockResponse fetchForGivenId(String id);
 
 }

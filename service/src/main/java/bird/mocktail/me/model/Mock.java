@@ -41,6 +41,8 @@ public class Mock {
 	@Field("content_type")
 	private String contentType;
 	
+	private String encoding;
+	
 	@DateTimeFormat(iso=ISO.DATE_TIME)
 	private java.util.Date createdTime;
 	
@@ -90,6 +92,14 @@ public class Mock {
 
 	public void setContentType(String contentType) {
 		this.contentType = contentType;
+	}
+
+	public String getEncoding() {
+		return encoding;
+	}
+
+	public void setEncoding(String encoding) {
+		this.encoding = encoding;
 	}
 
 	public java.util.Date getCreatedTime() {
