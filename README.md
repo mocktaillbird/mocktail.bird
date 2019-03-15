@@ -1,12 +1,11 @@
-# 							mocktail.bird
+# <center>mocktail.bird</center>
 
-**SetUp** 				**Storie Board** 				**Features** 				**Good to have**
+#### Overview:
+____
 
-______
+An Open source Mock application for http REST services and JSON stuff. Helps to create mock server for mocking all the api for development, with in-build support of HTTP/2, cache, Authentication, Swagger, JSON validation and Formatting at one place. 
 
 
-
-An Open source Mock application for http REST services and JSON stuff. Helps to create mock server for mocking all the api  for development with in-build support of mongodb, HTTP/2, Authentication etc.
 
 #### Pre Req:
 
@@ -34,7 +33,7 @@ mongodb setup
 8. ```mvn spring-boot:run```
 9. In the browser [Check](http://localhost:9080/swagger-ui.html) if application is running.
 
-####Storie Board
+#### #Storie Board
 
 ___
 
@@ -57,6 +56,8 @@ ___
 * User authentication
 
 * Time delay for the api response time
+
+* Cache implementation 
 
 * swagger UI for API management (http://localhost:9080/swagger-ui.html#/)
 

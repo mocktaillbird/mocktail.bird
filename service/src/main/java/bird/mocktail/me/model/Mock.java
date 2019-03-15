@@ -2,6 +2,7 @@ package bird.mocktail.me.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -47,7 +48,7 @@ public class Mock {
 	private java.util.Date modifiedTime;
 	
 	@Field("custom_headers")
-	private CustomHeader customheaders;
+	private Map<String, String> customheaders;
 	
 
 
@@ -107,13 +108,15 @@ public class Mock {
 		this.modifiedTime = modifiedTime;
 	}
 
-	public CustomHeader getCustomheaders() {
+	public Map<String, String> getCustomheaders() {
 		return customheaders;
 	}
 
-	public void setCustomheaders(CustomHeader customheaders) {
+	public void setCustomheaders(Map<String, String> customheaders) {
 		this.customheaders = customheaders;
 	}
+
+	
 
 	
 	
