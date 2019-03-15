@@ -1,4 +1,4 @@
-# <center>mocktail.bird</center>
+# mocktail.bird
 
 #### Overview:
 ____
@@ -17,21 +17,37 @@ maven 3.3.9 or latest
 
 mongodb setup
 
-
-
 #### Set Up:
 
 ------
 
 1. java 8 installation, Check using ``` java -version```
+
 2. mvn installation, Check using ``` mvn -version```
+
 3. [mongoDB setup]( https://github.com/mocktaillbird/docs.mocktail.bird )
+
 4. git clone 
-5. Update application.properties file with you db configurations.
-6. Run ``` mvn clean install``` in root
-7. ```cd services```
-8. ```mvn spring-boot:run```
-9. In the browser [Check](http://localhost:9080/swagger-ui.html) if application is running.
+
+5. Update application.properties file with you db configurations(if not default).
+
+6.  **Starting application**
+
+   * <i>Executable Jar</i>
+     * ``` mvn package```
+     * ``` cd services```
+     * ``` java -jar target/mocktail-bird-service-0.0.1-SNAPSHOT.jar```
+
+   * <i>Normal run</i>
+     * Run ``` mvn clean install``` in root
+     * ```cd services```
+     * ```mvn spring-boot:run```
+
+7. In the browser [Check](http://localhost:9080/swagger-ui.html) if application is running.
+
+8. [Welcome page](http://localhost:9080/)
+
+   
 
 #### #Storie Board
 
