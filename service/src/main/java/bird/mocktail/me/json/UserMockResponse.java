@@ -1,6 +1,8 @@
-package bird.mocktail.me.pojos;
+package bird.mocktail.me.json;
 
 public class UserMockResponse {
+	
+	private String url;
 	
 	private String id;
 
@@ -12,8 +14,17 @@ public class UserMockResponse {
 	
 	private String encoding;
 	
+	
+	
 	public UserMockResponse(String id, String body, String statusCode, String contentType, String encoding) {
 		this.id = id;
+		this.body = body;
+		this.statusCode = statusCode;
+		this.contentType = contentType;
+		this.encoding = encoding;
+	}
+	
+	public UserMockResponse(String body, String statusCode, String contentType, String encoding) {
 		this.body = body;
 		this.statusCode = statusCode;
 		this.contentType = contentType;
@@ -59,6 +70,14 @@ public class UserMockResponse {
 
 	public void setEncoding(String encoding) {
 		this.encoding = encoding;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }

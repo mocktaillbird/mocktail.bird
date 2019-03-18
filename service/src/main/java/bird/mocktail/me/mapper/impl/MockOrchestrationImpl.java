@@ -1,5 +1,7 @@
 package bird.mocktail.me.mapper.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -8,10 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import bird.mocktail.me.analyser.UserMockAnalyser;
+import bird.mocktail.me.json.UserMockResponse;
 import bird.mocktail.me.mapper.MockOrchestration;
 import bird.mocktail.me.model.Mock;
-import bird.mocktail.me.pojos.UserMockResponse;
 import bird.mocktail.me.repository.MockRepository;
+import bird.mocktail.me.utils.MocktailBirdUtils;
 
 @Service
 public class MockOrchestrationImpl  implements MockOrchestration{
@@ -24,6 +27,9 @@ public class MockOrchestrationImpl  implements MockOrchestration{
 	
 	@Autowired
 	UserMockAnalyser userMockAnalyser;
+	
+	@Autowired
+	MocktailBirdUtils mocktailBirdUtils;
 	
 	@Override
 	public UserMockResponse fetchForGivenId(String id) {
@@ -38,6 +44,19 @@ public class MockOrchestrationImpl  implements MockOrchestration{
 		}
 		
 		logger.debug("End of fetchForGivenId() method.");
+		return usermockres;
+	}
+
+	@Override
+	public UserMockResponse insertUserMockData(String body, String status, String contentType, String encoding) {
+		logger.debug("Start of insertUserMockData() method.");
+		UserMockResponse usermockres = null;
+		Date dt = new Date();
+		Mock  mock =  mockRepository.save(new Mock(
+						body, status, contentType , encoding, dt, dt, mocktailBirdUtils.addFiveDays(dt) , null  
+						));
+		// Validate user mock response and pass accordingly.
+		usermockres = userMockAnalyser.analyseMockContentForId(mock);
 		return usermockres;
 	}
 

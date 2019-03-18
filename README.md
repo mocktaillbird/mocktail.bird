@@ -7,6 +7,14 @@ An Open source Mock application for http REST services and JSON stuff. Helps to 
 
 
 
+#### #Contribution :
+
+​	<i>If interested to contribute for the project please [ email me ]( mailto:mocktailbird@gmail.com ) </i>
+
+​	<i>Tweet with <b>\#mocktailbird </b></i>
+
+
+
 #### Pre Req:
 
 --------------
@@ -31,7 +39,7 @@ mongodb setup
 
 5. Update application.properties file with you db configurations(if not default).
 
-6.  **Starting application**
+6. **Starting application**
 
    * <i>Executable Jar</i>
      * ``` mvn package```
@@ -49,6 +57,20 @@ mongodb setup
 
    
 
+    
+
+####  #  Mock
+
+------
+
+1. Create a sample mock ( POST : http://localhost:9080/api/createmock )
+
+   > ``` curl -X POST "http://localhost:9080/api/createmock?_contentType=application%2Fjson&_encode=UTF-8&_status=200%20OK" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"body\":\"dsaffsd\", \"status_code\":\"200 OK\", \"content_type\":\"application/json\", \"encoding\":\"UTF-8\", \"createdTime\": \"dd\", \"modifiedTime\":\"dd\", \"custom_headers\":{ \"key\":\"va;lue\" }}" ```
+
+   <b>Gives you an {id} after successful creation 201.</b>
+
+2. <b> GET :  http://localhost:9080/api/{id} </b>
+
 #### #Storie Board
 
 ___
@@ -60,36 +82,17 @@ ___
 -----------------
 
 * JSON Validation (client side approach)
-
 * JSON Formatter (client side approach)
-
 * Mocking rest services (with random url or custom urls)
-
 * File system or database management
-
 * User url grouping
-
 * User authentication
-
 * Time delay for the api response time
-
 * Cache implementation 
-
 * swagger UI for API management (http://localhost:9080/swagger-ui.html#/)
-
 * HTTP/2 Support
-
 * Docker implementation
-
-  
-
-#### #Good to Have:
-
-_______
-
-* Staring/stopping services
-
-
-
+* #Good to Have:
+  * Staring/stopping services
 
 

@@ -3,6 +3,8 @@ package bird.mocktail.me.exception;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,11 +19,15 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import bird.mocktail.me.json.exception.ErrorDetailsJSON;
 import bird.mocktail.me.json.exception.Errors;
+import bird.mocktail.me.webresources.v1.MocktailBirdServiceResource;
+import bird.mocktail.me.constants.ErrorCodes;
 import bird.mocktail.me.json.exception.Error;
 
 @ControllerAdvice
 @RestController
 public class MocktailBirdException extends ResponseEntityExceptionHandler {
+	
+	  private static final Logger logger = LoggerFactory.getLogger(MocktailBirdException.class);
 
 	  @Autowired
 	  ErrorDetailsJSON errorDetails;
@@ -60,7 +66,8 @@ public class MocktailBirdException extends ResponseEntityExceptionHandler {
 	  @ExceptionHandler({ Exception.class })
 	  public ResponseEntity<ErrorDetailsJSON> handleAll(Exception ex, WebRequest request) {
 	      List<Error> errorlist = new ArrayList<>();
-	      errorlist.add(new Error(null, "error occurred" ,ex.getMessage(),ex.getStackTrace().toString()));
+	      ex.printStackTrace();
+	      errorlist.add(new Error(ErrorCodes.INTERNAL_ERROR.getKey().toString(), ErrorCodes.INTERNAL_ERROR.getValue() ,ex.getMessage(), ex.getStackTrace().toString()));
 	      errors.setError(errorlist);
 	      errorDetails.setErrors(errors);
 	      return new ResponseEntity<ErrorDetailsJSON>(errorDetails, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);

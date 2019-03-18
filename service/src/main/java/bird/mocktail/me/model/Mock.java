@@ -1,7 +1,6 @@
 package bird.mocktail.me.model;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
@@ -30,9 +29,6 @@ public class Mock {
 	@Id
 	private String id;
 	
-	@DateTimeFormat(iso=ISO.DATE_TIME)
-	private java.util.Date timestamp;
-	
 	private String body;
 	
 	@Field("status_code")
@@ -49,10 +45,44 @@ public class Mock {
 	@DateTimeFormat(iso=ISO.DATE_TIME)
 	private java.util.Date modifiedTime;
 	
+	@DateTimeFormat(iso=ISO.DATE_TIME)
+	private java.util.Date expireAt;
+	
 	@Field("custom_headers")
 	private Map<String, String> customheaders;
 	
+	
+	public Mock() {
+		super();
+	}
 
+	public Mock(String id, String body, String statusCode, String contentType, String encoding, Date createdTime,
+			Date modifiedTime, Date expireAt, Map<String, String> customheaders) {
+		super();
+		this.id = id;
+		this.body = body;
+		this.statusCode = statusCode;
+		this.contentType = contentType;
+		this.encoding = encoding;
+		this.createdTime = createdTime;
+		this.modifiedTime = modifiedTime;
+		this.expireAt = expireAt;
+		this.customheaders = customheaders;
+	}
+	
+	public Mock(String body, String statusCode, String contentType, String encoding, Date createdTime,
+			Date modifiedTime, Date expireAt, Map<String, String> customheaders) {
+		super();
+		this.body = body;
+		this.statusCode = statusCode;
+		this.contentType = contentType;
+		this.encoding = encoding;
+		this.createdTime = createdTime;
+		this.modifiedTime = modifiedTime;
+		this.expireAt = expireAt;
+		this.customheaders = customheaders;
+	}
+	
 
 	public String getId() {
 		return id;
@@ -60,14 +90,6 @@ public class Mock {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public java.util.Date getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(java.util.Date timestamp) {
-		this.timestamp = timestamp;
 	}
 
 	public String getBody() {
@@ -116,6 +138,14 @@ public class Mock {
 
 	public void setModifiedTime(java.util.Date modifiedTime) {
 		this.modifiedTime = modifiedTime;
+	}
+
+	public java.util.Date getExpireAt() {
+		return expireAt;
+	}
+
+	public void setExpireAt(java.util.Date expireAt) {
+		this.expireAt = expireAt;
 	}
 
 	public Map<String, String> getCustomheaders() {
