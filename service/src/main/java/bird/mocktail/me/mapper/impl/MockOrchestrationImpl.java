@@ -1,12 +1,12 @@
 package bird.mocktail.me.mapper.impl;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import bird.mocktail.me.analyser.UserMockAnalyser;
@@ -32,8 +32,9 @@ public class MockOrchestrationImpl  implements MockOrchestration{
 	MocktailBirdUtils mocktailBirdUtils;
 	
 	@Override
+	@Cacheable(cacheNames = "mockid", key = "#id" )
 	public UserMockResponse fetchForGivenId(String id) {
-		logger.debug("Start of fetchForGivenId() method.");
+		logger.info("Start of fetchForGivenId() method, for id: {}", id);
 		UserMockResponse usermockres = null;
 		//Fetch data from DB
 		Optional<Mock> resultMock = mockRepository.findById(id);

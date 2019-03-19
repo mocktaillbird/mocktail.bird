@@ -17,11 +17,10 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import bird.mocktail.me.json.exception.ErrorDetailsJSON;
-import bird.mocktail.me.json.exception.Errors;
-import bird.mocktail.me.webresources.v1.MocktailBirdServiceResource;
 import bird.mocktail.me.constants.ErrorCodes;
 import bird.mocktail.me.json.exception.Error;
+import bird.mocktail.me.json.exception.ErrorDetailsJSON;
+import bird.mocktail.me.json.exception.Errors;
 
 @ControllerAdvice
 @RestController
