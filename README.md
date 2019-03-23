@@ -82,17 +82,45 @@ ___
 -----------------
 
 * JSON Validation (client side approach)
+
 * JSON Formatter (client side approach)
+
 * Mocking rest services (with random url or custom urls)
+
 * File system or database management
+
 * User url grouping
+
 * User authentication
+
 * Time delay for the api response time
+
 * Cache implementation 
+
 * swagger UI for API management (http://localhost:9080/swagger-ui.html#/)
+
 * HTTP/2 Support
+
 * Docker implementation
-* #Good to Have:
+
+* Good to Have:
+
   * Staring/stopping services
+
+    
+
+####  License:
+
+____
+
+
+
+[MIT License](https://github.com/mocktaillbird/mocktail.bird/blob/master/LICENSE)
+
+Copyright (c) 2019 [ Mocktail Bird ]( mailto:mocktailbird@gmail.com )
+
+
+
+
 
 
