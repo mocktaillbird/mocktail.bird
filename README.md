@@ -111,13 +111,9 @@ ___
 
 ####  License:
 
-____
+[MIT License](https://github.com/mocktaillbird/mocktail.bird/blob/master/LICENSE.md)
 
-
-
-[MIT License](https://github.com/mocktaillbird/mocktail.bird/blob/master/LICENSE)
-
-Copyright (c) 2019 [ Mocktail Bird ]( mailto:mocktailbird@gmail.com )
+Copyright (c) 2019-present, [ Mocktail Bird ]( mailto:mocktailbird@gmail.com )
 
 
 

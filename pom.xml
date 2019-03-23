@@ -29,7 +29,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- Use Jetty instead -->
+		<!-- Use Undertow instead -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-undertow</artifactId>
