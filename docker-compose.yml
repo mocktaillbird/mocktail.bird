@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  appplication:
+    image: mocktailbird/mocktail-bird:qa
+    ports:
+      - "9080:9080"
+    links:
+      - mocktail-bird-mongodb
+    networks:
+      - backend
+  mocktail-bird-mongodb:
+    image: mongo:3.6.11-stretch
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
+networks:
+  backend:
+    driver: "bridge"
