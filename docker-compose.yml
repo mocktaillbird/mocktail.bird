@@ -1,22 +1,28 @@
 version: '3'
 
 services:
-  appplication:
+  app:
     image: mocktailbird/mocktail-bird:qa
+    container_name: mocktail-bird-qa
     ports:
       - "9080:9080"
     links:
-      - mocktail-bird-mongodb
+      - mongo
     networks:
-      - backend
-  mocktail-bird-mongodb:
+      - mongodb
+  mongo:
     image: mongo:3.6.11-stretch
+    container_name: mocktail-bird-mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mockbird
+      - MONGO_INITDB_ROOT_PASSWORD=Ilovethisbird
+      - MONGO_INITDB_DATABASE=admin
     ports:
       - "27017:27017"
     volumes:
-      - ./data:/data/db
+      - ./scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
-      - backend
+      - mongodb
 networks:
-  backend:
+  mongodb:
     driver: "bridge"
