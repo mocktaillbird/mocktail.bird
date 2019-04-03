@@ -1,16 +1,16 @@
-FROM maven:3.6.0-jdk-11-slim
+FROM openjdk:11-jdk-slim
 
 MAINTAINER Ravi Sankar Karuturi(github/karuturirs)
 
 RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y git
+    apt-get upgrade -y
 
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY mocktail.bird /app/mocktail.bird/
-CMD cd /app/mocktail.bird/ ; mvn clean install ; cd service ; java -jar target/mocktail-bird-service-0.0.1-SNAPSHOT.jar
+COPY ./service/target/mocktail-bird-service-*.jar  /app/
+
+
+CMD java -jar /app/mocktail-bird-service-*.jar
 
 EXPOSE 9080

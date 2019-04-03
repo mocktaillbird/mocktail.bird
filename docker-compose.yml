@@ -2,15 +2,27 @@ version: '3'
 
 services:
   app:
-    image: mocktailbird/mocktail-bird:qa
-    container_name: mocktail-bird-qa
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mocktail-bird-service
+    labels:
+        com.mocktail.bird: "Mocktail-bird app container"
     ports:
       - "9080:9080"
     links:
-      - mongo
+      - db
     networks:
-      - mongodb
-  mongo:
+      - net-app-mongo
+    deploy:
+      mode: replicated
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+      labels:
+          com.mocktail.bird: "Mocktail-bird app serivce"
+  db:
     image: mongo:3.6.11-stretch
     container_name: mocktail-bird-mongo
     environment:
@@ -21,8 +33,21 @@ services:
       - "27017:27017"
     volumes:
       - ./scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - mock-data:/data/db
+    command: mongod --auth
     networks:
-      - mongodb
+      - net-app-mongo
+    deploy:
+      mode: replicated
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        delay: 2s
+        max_attempts: 3
+      labels:
+          com.mocktail.bird.mongo: "Mocktail-bird mongo serivce"
+volumes:
+  mock-data:
 networks:
-  mongodb:
+  net-app-mongo:
     driver: "bridge"
