@@ -1,6 +1,7 @@
 package bird.mocktail.me.mapper.impl;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -60,5 +61,14 @@ public class MockOrchestrationImpl  implements MockOrchestration{
 		usermockres = userMockAnalyser.analyseMockContentForId(mock);
 		return usermockres;
 	}
+
+	@Override
+	public List<Mock> getAllContentOfMock() {
+		logger.debug("Start of getAllContentOfMock() method.");
+		List<Mock> usermockes = null;
+		List<Mock>  allMock =  mockRepository.findAll();
+		return allMock;
+	}
+
 
 }

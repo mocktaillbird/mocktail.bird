@@ -1,5 +1,6 @@
 package bird.mocktail.me.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -12,4 +13,6 @@ public interface MockRepository extends MongoRepository<Mock, String> {
 	public Optional<Mock> findById(String id);
 	
 	public Mock save(Mock mock);
+	
+	public List<Mock> findAll();
 }

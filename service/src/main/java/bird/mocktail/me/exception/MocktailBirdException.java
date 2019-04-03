@@ -60,8 +60,6 @@ public class MocktailBirdException extends ResponseEntityExceptionHandler {
 	      return new ResponseEntity<ErrorDetailsJSON>(errorDetails, new HttpHeaders(), HttpStatus.BAD_REQUEST);
 	  }
 	  
-
-	  
 	  @ExceptionHandler({ Exception.class })
 	  public ResponseEntity<ErrorDetailsJSON> handleAll(Exception ex, WebRequest request) {
 	      List<Error> errorlist = new ArrayList<>();

@@ -10,7 +10,6 @@ WORKDIR /app
 
 COPY ./service/target/mocktail-bird-service-*.jar  /app/
 
-
 CMD java -jar /app/mocktail-bird-service-*.jar
 
 EXPOSE 9080

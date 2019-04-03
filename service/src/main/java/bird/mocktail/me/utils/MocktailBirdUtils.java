@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,10 @@ import bird.mocktail.me.pojos.StatusCodeMapping;
 
 @Service
 public class MocktailBirdUtils {
+	
+	
+	@Value("${mock.api.validation.days}")
+	Integer validDays;
 	
 	/**
 	 * method to validate the URL id
@@ -42,7 +47,7 @@ public class MocktailBirdUtils {
 	public Date addFiveDays(Date dt) {
 		Calendar c = Calendar.getInstance(); 
 		c.setTime(dt); 
-		c.add(Calendar.DATE, 5);
+		c.add(Calendar.DATE, validDays.intValue());
 		return c.getTime();
 	}
 	

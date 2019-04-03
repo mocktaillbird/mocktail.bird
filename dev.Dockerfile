@@ -10,8 +10,8 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY mocktail.bird /app/mocktail.bird/
+COPY . /app/mocktail.bird/
 
-CMD cd /app/mocktail.bird/ ; mvn clean install ; cd service ; java -jar target/mocktail-bird-service-0.0.1-SNAPSHOT.jar
+CMD cd /app/mocktail.bird/service ; mvn spring-boot:run
 
 EXPOSE 9080
