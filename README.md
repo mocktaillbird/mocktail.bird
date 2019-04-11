@@ -1,9 +1,36 @@
+
+
+
+
 # <p><center>mocktail.bird (🍹 :bird:)</center></p>
 
 #### Overview:
 An Open source Mock application for http REST services and JSON stuff. Helps to create mock server for mocking all the api. Mocktail bird has in-build support of HTTP/2, cache, Authentication, Swagger, JSON validation and Formatting at one place. Easy to setup on any machine in 5 steps with docker.
 
-#### Getting Started:
+#####Features:
+
+- JSON Validation (client side approach)
+- JSON Formatter (client side approach)
+- Mocking rest services (with random url or custom urls)
+- Time delay for the api response time (<url>?delay=1000, is milliseconds ) 
+- File system or database management
+- User url grouping
+- User authentication
+- Cache implementation 
+- swagger UI for API management (http://localhost:9080/swagger-ui.html#/)
+- HTTP/2 Support
+- Docker implementation
+- Good to Have:
+  - Staring/stopping services
+
+
+
+#### #Getting Started For Mocking:
+
+1. Install docker on your machine
+2. run 
+
+##### #For Development:
 
 ##### #Prerequisites
 
@@ -15,27 +42,11 @@ An Open source Mock application for http REST services and JSON stuff. Helps to 
 
 ##### #Instructions:
 
-* [Application setup](https://github.com/mocktaillbird/docs.mocktail.bird/blob/master/docs/SettingUpMocktailBird.md)
+* [Application setup for development](https://github.com/mocktaillbird/docs.mocktail.bird/blob/master/docs/SettingUpMocktailBird.md)
 
 * Storie Board [Agile](https://trello.com/b/SYCJdKCZ/mocktailbird)
 
-* Features:
-
-  * JSON Validation (client side approach)
-
-  - JSON Formatter (client side approach)
-  - Mocking rest services (with random url or custom urls)
-  - File system or database management
-  - User url grouping
-  - User authentication
-  - Time delay for the api response time
-  - Cache implementation 
-  - swagger UI for API management (http://localhost:9080/swagger-ui.html#/)
-  - HTTP/2 Support
-  - Docker implementation
-  - Good to Have:
-    - Staring/stopping services
-
+  
 
 
 #### #Contribution :

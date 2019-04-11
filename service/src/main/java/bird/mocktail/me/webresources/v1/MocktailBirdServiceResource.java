@@ -41,7 +41,7 @@ public class MocktailBirdServiceResource {
 	@Value("${mocktail.bird.hostname}")
 	String hostname;
 	
-	@GetMapping(path= "/")
+	@GetMapping(path= "/Hello")
 	public String welcome() {
 		return "Hello, Welocme to Mocktail.bird !";
 	}
@@ -50,7 +50,6 @@ public class MocktailBirdServiceResource {
 	@GetMapping(path = "/api/{id}", produces="application/json")
 	public ResponseEntity<?> getMockResources(@PathVariable("id") String id, 
 											@RequestParam(name = "delay", defaultValue = "0" ) String delay ) {
-		
 		logger.info("Started getMockResources() for id: {}", id);
 		
 		// validate Input

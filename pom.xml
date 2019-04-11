@@ -55,6 +55,5 @@
 	 <modules>
 	   <module>service</module>
 	   <module>config</module>
-	   <module>web</module>
 	 </modules>
 </project>
