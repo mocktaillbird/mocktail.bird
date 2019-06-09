@@ -25,10 +25,14 @@ An Open source Mock application for http REST services and JSON stuff. Helps to 
 
 
 
-#### #Getting Started For Mocking:
+#### #Starting Application in 2 steps:
 
 1. Install docker on your machine
-2. run 
+2. run `docker-compose up`  to start applications
+3. run `docker-compose down` to stop applications.
+4. You are all set to use mocktailbird. :)
+
+
 
 ##### #For Development:
 
