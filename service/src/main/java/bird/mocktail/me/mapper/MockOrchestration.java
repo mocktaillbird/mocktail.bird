@@ -9,7 +9,7 @@ public interface MockOrchestration {
 	
 	public UserMockResponse fetchForGivenId(String id);
 	
-	public UserMockResponse insertUserMockData(String body, String status, String contentType, String encoding);
+	public UserMockResponse insertUserMockData(String body, String status, String contentType, String encoding, String validDays);
 	
 	public List<Mock> getAllContentOfMock();
 

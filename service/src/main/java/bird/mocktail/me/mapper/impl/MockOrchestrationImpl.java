@@ -50,12 +50,12 @@ public class MockOrchestrationImpl  implements MockOrchestration{
 	}
 
 	@Override
-	public UserMockResponse insertUserMockData(String body, String status, String contentType, String encoding) {
+	public UserMockResponse insertUserMockData(String body, String status, String contentType, String encoding, String validDays) {
 		logger.debug("Start of insertUserMockData() method.");
 		UserMockResponse usermockres = null;
 		Date dt = new Date();
 		Mock  mock =  mockRepository.save(new Mock(
-						body, status, contentType , encoding, dt, dt, mocktailBirdUtils.addFiveDays(dt) , null  
+						body, status, contentType , encoding, dt, dt, mocktailBirdUtils.addDays(dt,validDays) , null  
 						));
 		// Validate user mock response and pass accordingly.
 		usermockres = userMockAnalyser.analyseMockContentForId(mock);

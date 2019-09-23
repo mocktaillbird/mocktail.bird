@@ -44,10 +44,13 @@ public class MocktailBirdUtils {
 		return statusCodeM.getHttpStatus();
 	}
 	
-	public Date addFiveDays(Date dt) {
+	public Date addDays(Date dt, String validDays) {
 		Calendar c = Calendar.getInstance(); 
 		c.setTime(dt); 
-		c.add(Calendar.DATE, validDays.intValue());
+		if(validDays.isEmpty() || Integer.parseInt(validDays) <= 0 ){
+			validDays = this.validDays.toString();
+		}
+		c.add(Calendar.DATE, Integer.parseInt(validDays));
 		return c.getTime();
 	}
 	

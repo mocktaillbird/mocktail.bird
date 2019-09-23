@@ -95,13 +95,14 @@ public class MocktailBirdServiceResource {
 	public ResponseEntity<?> createNewMockResources(@RequestParam(name = "_status", defaultValue = "200 OK" ) String status, 
 													@RequestParam(name = "_contentType", defaultValue = "application/json" ) String contentType,
 													@RequestParam(name = "_encode", defaultValue = "UTF-8") String encoding,
+													@RequestParam(name = "_validDays", defaultValue = "5") String validDays,
 													@RequestBody(required= false) String body) {
 		
 		logger.info("Started createNewMockResources()");
 		// validate Input
 		
 		//orchestration  layer
-		UserMockResponse usermockresp = mockOrche.insertUserMockData(body, status, contentType, encoding);
+		UserMockResponse usermockresp = mockOrche.insertUserMockData(body, status, contentType, encoding, validDays);
 		
 		usermockresp.setUrl(hostname+":"+port+"/api/"+usermockresp.getId());
 		
