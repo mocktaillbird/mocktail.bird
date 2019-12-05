@@ -4,7 +4,7 @@
   <parent>
     <artifactId>mocktail-bird</artifactId>
     <groupId>bird.mock.tail.me</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
   <artifactId>mocktail-bird-config</artifactId>
   
