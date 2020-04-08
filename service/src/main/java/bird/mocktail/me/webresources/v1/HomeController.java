@@ -10,7 +10,7 @@ public class HomeController {
 	@GetMapping(value = "/")
     public String index(Model model) {
 		System.out.println("opening index page");
-        return "index.html";
+        return "/swagger-ui.html";
     }
 
 }

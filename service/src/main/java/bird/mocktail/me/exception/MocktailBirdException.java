@@ -40,7 +40,7 @@ public class MocktailBirdException extends ResponseEntityExceptionHandler {
 	  
 	  @ExceptionHandler(CustomExceptionHandling.class)
 	  @ResponseBody
-	  public final ResponseEntity<ErrorDetailsJSON> handleCanvasIdNotFoundException(CustomExceptionHandling cex, WebRequest request) {
+	  public final ResponseEntity<ErrorDetailsJSON> handleNotFoundException(CustomExceptionHandling cex, WebRequest request) {
 	      List<Error> errorlist = new ArrayList<>();
 	      errorlist.add(new Error(cex.getCode(),cex.getMessage(),cex.getDevmsg(),cex.getMoreInfo()));
 	      errors.setError(errorlist);
