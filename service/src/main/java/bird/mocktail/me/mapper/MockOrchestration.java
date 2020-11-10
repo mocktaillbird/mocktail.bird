@@ -13,4 +13,6 @@ public interface MockOrchestration {
 	
 	public List<Mock> getAllContentOfMock();
 
+	public UserMockResponse updateForGivenId(String id, String body, String status, String contentType, String encoding, String validDays);
+
 }

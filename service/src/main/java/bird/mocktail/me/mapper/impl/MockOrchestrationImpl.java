@@ -70,5 +70,19 @@ public class MockOrchestrationImpl  implements MockOrchestration{
 		return allMock;
 	}
 
+	@Override
+	public UserMockResponse updateForGivenId(String id, String body, String status, String contentType, String encoding, String validDays) {
+		Optional<Mock> resultMock = mockRepository.findById(id);
+		if(resultMock.isPresent()){
+			Date dt = new Date();
+			Mock mock = mockRepository.save(new Mock(
+					id, body, status, contentType , encoding, resultMock.get().getCreatedTime(), dt, mocktailBirdUtils.addDays(dt,validDays) , null
+			));
+			return userMockAnalyser.analyseMockContentForId(mock);
+		}else{
+			return null;
+		}
+	}
+
 
 }

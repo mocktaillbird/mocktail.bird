@@ -80,7 +80,34 @@ public class MocktailBirdServiceResource {
 			return new ResponseEntity<>("", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
+	@PostMapping(path = "/api/{id}", produces="application/json")
+	public ResponseEntity<?> updateMockResources(@PathVariable("id") String id,
+												 @RequestParam(name = "_status", defaultValue = "200 OK" ) String status,
+												 @RequestParam(name = "_contentType", defaultValue = "application/json" ) String contentType,
+												 @RequestParam(name = "_encode", defaultValue = "UTF-8") String encoding,
+												 @RequestParam(name = "_validDays", defaultValue = "5") String validDays,
+												 @RequestBody(required= false) String body) {
+		logger.info("Started updateMockResources() for id: {}", id);
+
+		// validate Input
+		boolean validId = mocktailBirdUtils.isValidateURLId(id);
+		if(!validId) {
+			logger.error("{} , {}",ErrorCodes.INVALID_ID.getKey() , ErrorCodes.INVALID_ID.getValue() );
+			return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
+		}
+
+		//orchestration  layer
+		UserMockResponse usermockresp = mockOrche.updateForGivenId(id,body, status, contentType, encoding, validDays);
+
+		if(null != usermockresp && null != mocktailBirdUtils.sendCorrectStatus(usermockresp)) {
+			return new ResponseEntity<>(usermockresp.getBody(),  mocktailBirdUtils.sendCorrectStatus(usermockresp));
+		}else {
+			logger.error("{} , {}",ErrorCodes.INVALID_REQUEST.getKey() , ErrorCodes.INVALID_REQUEST.getValue() );
+			return new ResponseEntity<>("", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
 	
 	@GetMapping(path = "/api/getAllMock", produces="application/json")
 	public ResponseEntity<?> getAllMockResources() {
